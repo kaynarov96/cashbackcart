@@ -3,7 +3,6 @@ const REGULAR_CATEGORY = 'regular';
 const INCREASED_CATEGORY = 'increased';
 const SPECIAL_CATEGORY = 'special';
 
-let cashback = 0;
 
 const purchases = [
     {
@@ -37,17 +36,16 @@ function percent(amount, percent){
 };
 
 for(const purchase of purchases){
-    if(purchase.category == REGULAR){
+    if(purchase.category == REGULAR_CATEGORY){
         cashbackgive += percent(purchase.amount, regularPurchasesPercent);
-    } else if(purchase.category == INCREASED){
+    } else if(purchase.category == INCREASED_CATEGORY){
         cashbackgive += percent(purchase.amount, increasedPurchasesPercent);
-    } else if(purchase.category == SPECIAL){
+    } else if(purchase.category == SPECIAL_CATEGORY){
         cashbackgive += percent(purchase.amount, specialPurchasesPercent);
     }
     
 }
-if(cashbacklimit > cashbacklimit)
-cashbackgive = cashbacklimit;
-cashback = cashbacklimit;
-console.log(cashback);
+if(cashbackgive > cashbackLimit){
+cashbackgive = cashbackLimit};
+console.log(cashbackgive);
 
